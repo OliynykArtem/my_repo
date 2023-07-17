@@ -1,0 +1,53 @@
+{% extends 'main_app/base.html' %} 
+
+{% load static %}
+
+{%block file_css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/publication.css' %}" />
+{%endblock file_css%}
+
+{%block main_content%}
+<div class="publication">
+    <h2 class="publication__title">{{publication_from_db.title}}</h2>
+    <div class="publication__content">
+        {% if publication_from_db.main_image %}
+        <div class="publication__main-image-wrapp">
+            <div class="publication__main-image">
+                <img src="{{publication_from_db.main_image.url}}"/>
+            </div>
+        </div>
+        {% endif %}
+        {% if publication_from_db.text %}
+        <div class="publication__text">
+            <p>{{publication_from_db.text}}</p>
+        </div>
+        {% endif %}
+        {% if publication_images_from_db %}
+        <div class="images-container">
+            <h2 class="images-title">Фото</h2>
+            <ul class="images">
+                {% for p_img in publication_images_from_db%}
+                <li class="images__item">
+                    <a href="{{p_img.image.url}}"><img src="{{p_img.image.url}}"/></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if publication_videos_from_db %}
+        <div class="videos-container">
+            <h2 class="videos-title">Відео</h2>
+            <ul class="videos">
+                {% for p_vid in publication_videos_from_db%}
+                <li class="videos__item">
+                    <video controls>
+                        <source src="{{p_vid.video.url}}" type="video/mp4"/>
+                    </video>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{%endblock main_content%}

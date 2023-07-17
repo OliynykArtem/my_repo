@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>orthodox</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/base.css' %}" />
+    {%block file_css%}
+    {%endblock file_css%}
+  </head>
+  <body>
+    {% block header %}
+    <header>
+      <div class="logo">
+        <p class="logo__organization-name">Українська Православна Церква</p>
+        <p class="logo__site-name">Західноєвропейське вікаріатство Української Православної Церкви</p>
+        <p class="logo__site-name">Західне благочиння в Німеччині, м.Кельн</p>
+      </div>
+
+      <nav id="menu-wrap">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="{% url 'main' %}"><span>Головна</span></a>
+          </li>
+          <li class="menu__item">
+            <a href="{% url 'bishop' %}"><span>Архієрей</span></a>
+          </li>
+          <li class="menu__item">
+            <a href="{% url 'parishes' %}"><span>Парафії</span></a>
+          </li>
+          <li class="menu__item">
+            <a href="{% url 'clergy' %}"><span>Духовенство</span></a>
+          </li>
+          <li class="menu__item">
+            <a href="{% url 'photogallery' %}"><span>Фотогалерея</span></a>
+          </li>
+          <li class="menu__item">
+            <a href="{% url 'contacts' %}"><span>Контакти</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {% endblock header %} 
+    
+    <main>
+      <div class="main-conteiner">
+        {%block main_content%} 
+        <div class="empty-block"></div>
+        {%endblock main_content%}
+
+        {%block sidebar%}
+        <div class="side-panel">
+
+        {%block sidebar_main%}
+        {%endblock sidebar_main%}
+
+      {%block sidebar_base%}
+      <div class="sidebar-module">
+
+        <div class="sidebar-module__title"><span>Календар</span></div>
+
+        <div class="sidebar-module__content">
+            <div class="calendar-block">
+                <table class="calendar">
+                    <tbody>
+                        <tr>
+                            <td class="calendar__nav-month_prev">
+                                <a class="calendar__nav-link">«</a>
+                            </td>
+                            <td class="calendar__current-month" colspan="5">Липень 2023</td>
+                            <td class="calendar__button-month_next">
+                                <a class="calendar__nav-link">»</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="calendar__day-name">Пн</td>
+                            <td class="calendar__day-name">Вт</td>
+                            <td class="calendar__day-name">Ср</td>
+                            <td class="calendar__day-name">Чт</td>
+                            <td class="calendar__day-name">Пт</td>
+                            <td class="calendar__day-name">Сб</td>
+                            <td class="calendar__day-name">Нд</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar__day-number_empty">&nbsp;</td>
+                            <td class="calendar__day-number_empty">&nbsp;</td>
+                            <td class="calendar__day-number_empty">&nbsp;</td>
+                            <td class="calendar__day-number_empty">&nbsp;</td>
+                            <td class="calendar__day-number_empty">&nbsp;</td>
+                            <td class="calendar__day-number"><a href="#">1</a></td>
+                            <td class="calendar__day-number"><a href="#">2</a></td>
+                        </tr>
+                        <tr>
+                            <td class="calendar__day-number"><a href="#">3</a></td>
+                            <td class="calendar__day-number"><a href="#">4</a></td>
+                            <td class="calendar__day-number"><a href="#">5</a></td>
+                            <td class="calendar__day-number"><a href="#">6</a></td>
+                            <td class="calendar__day-number"><a href="#">7</a></td>
+                            <td class="calendar__day-number"><a href="#">8</a></td>
+                            <td class="calendar__day-number"><a href="#">9</a></td>
+                        </tr>
+                        <tr>
+                            <td class="calendar__day-number"><a href="#">10</a></td>
+                            <td class="calendar__day-number"><a href="#">11</a></td>
+                            <td class="calendar__day-number"><a href="#">12</a></td>
+                            <td class="calendar__day-number"><a href="#">13</a></td>
+                            <td class="calendar__day-number"><a href="#">14</a></td>
+                            <td class="calendar__day-number"><a href="#">15</a></td>
+                            <td class="calendar__day-number"><a href="#">16</a></td>
+                        </tr>
+                        <tr>
+                            <td class="calendar__day-number"><a href="#">17</a></td>
+                            <td class="calendar__day-number"><a href="#">18</a></td>
+                            <td class="calendar__day-number"><a href="#">19</a></td>
+                            <td class="calendar__day-number"><a href="#">20</a></td>
+                            <td class="calendar__day-number"><a href="#">21</a></td>
+                            <td class="calendar__day-number"><a href="#">22</a></td>
+                            <td class="calendar__day-number"><a href="#">23</a></td>
+                        </tr>
+                        <tr>
+                            <td class="calendar__day-number"><a href="#">24</a></td>
+                            <td class="calendar__day-number"><a href="#">25</a></td>
+                            <td class="calendar__day-number"><a href="#">26</a></td>
+                            <td class="calendar__day-number"><a href="#">27</a></td>
+                            <td class="calendar__day-number"><a href="#">28</a></td>
+                            <td class="calendar__day-number"><a href="#">29</a></td>
+                            <td class="calendar__day-number"><a href="#">30</a></td>
+                        </tr>
+                        <tr>
+                          <td class="calendar__day-number"><a href="#">31</a></td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="day-info">
+              <h2 class="day-info__title">День пам'яті</h2>
+              {% comment %} {% for i in all_calendar_day%} {% endcomment %}
+              {% if current_calendar_day%}
+              <div class="info-about-saints">
+                <p>{{current_calendar_day.saints}}</p>
+              </div>
+              {% comment %} {% endfor %} {% endcomment %}
+              <h2 class="day-info__title">Притча дня</h2>
+              <div class="day-parable">
+                <p>{{ current_calendar_day.day_parable }}</p>
+              </div>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+    {%endblock sidebar_base%}
+    </div>
+    {%endblock sidebar%}
+      </div>
+    </main>
+    
+    
+    
+    {% block footer %}
+    <footer>
+      <div class="footer-title">
+        <p class="footer__organization-name">Українська Православна Церква</p>
+        <p class="footer__site-name">Західноєвропейське вікаріатство Української Православної Церкви</p>
+        <p class="footer__site-name">Західне благочиння в Німеччині, м.Кельн</p>
+      </div>
+      <nav class="footer-menu-wrap">
+        <ul class="footer-menu">
+          <li class="footer-menu__item">
+            <a href="{% url 'main' %}"><span>Головна</span></a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="{% url 'bishop' %}"><span>Архієрей</span></a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="{% url 'parishes' %}"><span>Парафії</span></a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="{% url 'clergy' %}"><span>Духовенство</span></a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="{% url 'photogallery' %}"><span>Фотогалерея</span></a>
+          </li>
+          <li class="footer-menu__item">
+            <a href="{% url 'contacts' %}"><span>Контакти</span></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    {% endblock footer %}
+  </body>
+</html>

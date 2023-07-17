@@ -1,0 +1,31 @@
+{% extends 'main_app/base.html' %} 
+
+{% load static %}
+
+{%block file_css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/clergy.css' %}" />
+{%endblock file_css%}
+
+
+{%block main_content%}
+<div class="clergy">
+    <h2 class="clergy-main-title">Духовенство</h2>
+    <ul class="clergy__list">
+        {% for clergyman in clergymans %}
+        <a href="{% url 'clergyman' clergyman.pk %}">    
+            <li class="clergy__item">
+                {% if clergyman.image %}
+                <div class="clergy__image"><img src="{{clergyman.image.url}}"/></div>
+                {% endif %}
+                <div class="clergy__content">
+                    <h2 class="clergy__name">{{clergyman.name}}</h2>
+                    {% if clergyman.job_title != None %}
+                    <p class="clergy__job-title">{{clergyman.job_title}}</p>
+                    {% endif %}
+                </div>
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock main_content%}

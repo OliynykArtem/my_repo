@@ -1,0 +1,54 @@
+{% extends 'main_app/base.html' %} 
+
+{% load static %}
+
+{%block file_css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/parish.css' %}" />
+{%endblock file_css%}
+
+{%block main_content%}
+<div class="parish">
+    <h2 class="parish__title">{{parish_from_db.name}}</h2>
+    <div class="parish__content">
+        <div class="base-info">
+            {% if parish_from_db.main_image%}
+            <div class="parish__image">
+                <img src="{{parish_from_db.main_image.url}}" alt="{{parish_from_db.name}}"/>
+            </div>
+            {% endif %}
+            {% if parish_from_db.date_of_establishment != None and parish_from_db.address != None%}
+            <ul class="parish-info">
+                {% if parish_from_db.date_of_establishment %}
+                <li class="parish-info__item">
+                    <h3 class="parish-info__title">Дата заснування</h3>
+                    <p class="parish-info__text">{{parish_from_db.date_of_establishment|date:"d.m.Y"}}</p>
+                </li>
+                {% endif %}
+                {% if parish_from_db.address %}
+                <li class="parish-info__item">
+                    <h3 class="parish-info__title">Адреса</h3>
+                    <p class="parish-info__text">{{parish_from_db.address}}</p>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="images-container">
+            <h2 class="images-title">Фото</h2>
+            <ul class="images">
+                {% for p_img in parish_images_from_db%}
+                <li class="images__item">
+                    <a href="#"><img src="{{p_img.image.url}}"/></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% if parish_from_db.history %}
+        <div class="history">
+                <h2 class="history__title">Історія</h2>
+                <p class="history__text">{{parish_from_db.history}}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{%endblock main_content%}

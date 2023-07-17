@@ -1,0 +1,64 @@
+{% extends 'main_app/base.html' %} 
+
+{% load static %}
+
+{%block file_css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/clergyman.css' %}" />
+{%endblock file_css%}
+
+{%block main_content%}
+<div class="clergyman">
+    <h2 class="clergyman__title">{{clergyman_from_db.name}}<br>{% if clergyman_from_db.job_title != None %}{{clergyman_from_db.job_title}}{% endif %}</h2>
+    <div class="clergyman__content">
+        <div class="base-info">
+            {% if clergyman_from_db.image%}
+            <div class="clergyman__image">
+                <img src="{{clergyman_from_db.image.url}}" alt="{{clergyman_from_db.name}}"/>
+            </div>
+            {% endif %}
+            <div class="clergyman-base-info">
+                {% if clergyman_from_db.birth_date != None and clergyman_from_db.deacon_ordination_date != None and clergyman_from_db.priest_ordination_date != None%}
+                <ul class="clergyman-info">
+                    {% if clergyman_from_db.birth_date%}
+                    <li class="clergyman-info__item">
+                        <h3 class="clergyman-info__title">Дата народження</h3>
+                        <p class="clergyman-info__text">{{clergyman_from_db.birth_date|date:"d.m.Y"}}</p>
+                    </li>
+                    {% endif %}
+                    {% if clergyman_from_db.deacon_ordination_date%}
+                    <li class="clergyman-info__item">
+                        <h3 class="clergyman-info__title">Дата дияконської хіротонії</h3>
+                        <p class="clergyman-info__text">{{clergyman_from_db.priest_ordination_date|date:"d.m.Y"}}</p>
+                    </li>
+                    {% endif %}
+                    {% if clergyman_from_db.priest_ordination_date%}
+                    <li class="clergyman-info__item">
+                        <h3 class="clergyman-info__title">Дата ієрейської хіротонії</h3>
+                        <p class="clergyman-info__text">{{clergyman_from_db.deacon_ordination_date|date:"d.m.Y"}}</p>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="clergyman__other-info">
+        {% if clergyman_from_db.secular_education != "" and clergyman_from_db.spiritual_education != ""%}
+            <ul class="clergyman-info">
+                {% if clergyman_from_db.secular_education%}
+                <li class="clergyman-info__item">
+                    <h3 class="clergyman-info__title">Світська освіта</h3>
+                    <p class="clergyman-info__text">{{clergyman_from_db.secular_education}}</p>
+                </li>
+                {% endif %}
+                {% if clergyman_from_db.spiritual_education%}
+                <li class="clergyman-info__item">
+                    <h3 class="clergyman-info__title">Духовна освіта</h3>
+                    <p class="clergyman-info__text">{{clergyman_from_db.spiritual_education}}</p>
+                </li>
+                {% endif %}
+            </ul>
+        {% endif %}
+        </div>
+    </div>
+</div>
+{%endblock main_content%}

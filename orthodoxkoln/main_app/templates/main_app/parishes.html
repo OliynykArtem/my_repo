@@ -1,0 +1,33 @@
+{% extends 'main_app/base.html' %} 
+
+{% load static %}
+
+{%block file_css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/parishes.css' %}" />
+{%endblock file_css%}
+
+
+{%block main_content%}
+<div class="parishes">
+    <h2 class="parishes-main-title">Парафії</h2>
+    <ul class="parishes__list">
+        {% for par in all_parish %}
+        <a href="{% url 'parish' par.pk %}">    
+            <li class="parishes__item">
+                {% if par.main_image %}
+                <div class="parishes__image"><img src="{{par.main_image.url}}" alt=""/></div>
+                {% endif %}
+                <div class="parishes__content">
+                    {% if par.name != None%}
+                    <h2 class="parishes__title">{{par.name}}</h2>
+                    {% endif %}
+                    {% if par.address != None%}
+                    <p class="parishes__address">{{par.address}}</p>
+                    {% endif %}
+                </div>
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock main_content%}

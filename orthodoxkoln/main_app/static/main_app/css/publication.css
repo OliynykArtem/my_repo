@@ -1,0 +1,115 @@
+.publication{
+    width: 770px;
+}
+
+.publication__title{
+    padding: 11px 15px;
+    color: #fff;
+    text-align: center;
+    background-color: #11abff;
+    border-radius: 5px;
+    font-family: 'Ariel', sans-serif;
+    font-size: 24px;
+}
+
+.publication__main-image-wrapp{
+    margin: 50px 0 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.publication__main-image{
+    padding: 20px;
+    justify-content: center;
+    background-color: #d9e7fb;
+    border-radius: 5px;
+    box-shadow: 0px 7px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.publication__main-image img{
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.publication__text{
+    display: inline;
+}
+
+.publication__text p{
+    padding: 35px 25px 35px 35px;
+    background-color: #d9e7fb;
+    border-radius: 5px;
+    box-shadow: 0px 7px 12px 0px rgba(0, 0, 0, 0.3);
+    color: #1a1a1a;
+    font-size: 18px;
+    word-spacing: 10px;
+    line-height: 26px;
+}
+
+.images-container{
+    margin: 70px 0 50px 0;
+}
+
+.images-title, 
+.videos-title{
+    height: 50px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-align: center;
+    background-color: #11abff;
+    border-radius: 5px;
+    font-family: 'Ariel', sans-serif;
+    font-size: 24px;
+}
+
+.images{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #d9e7fb;
+    border-radius: 5px;
+    box-shadow: 0px 7px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.images__item a{
+    display: flex;
+    justify-content: center;
+    margin: 10px 8px;
+    width: 230px;
+    height: 180px;
+}
+
+.images__item img{
+    margin: 2px;
+    padding: 2px;
+    box-sizing: content-box;
+    max-width: 230px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.images__item img:hover{
+    margin: 0;
+    border: #11abff solid 2px;
+}
+
+.videos{
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d9e7fb;
+    border-radius: 5px;
+    box-shadow: 0px 7px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.videos__item video{
+    margin: 15px 0;
+    max-width: 640px;
+    max-height: 640px;
+    border-radius: 5px;
+}
+
+

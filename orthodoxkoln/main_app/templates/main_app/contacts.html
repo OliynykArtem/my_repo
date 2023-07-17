@@ -1,0 +1,32 @@
+{% extends 'main_app/base.html' %} 
+
+{% load static %}
+{%block file_css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/contacts.css' %}" />
+{%endblock file_css%}
+
+{%block main_content%} 
+    <div class="contacts">
+        <div class="contacts__address">
+            <h2 class="contacts__title">Адреса</h2>
+            <ul class="contacts__list">
+                <li><p class="contacts__item">Zülpicher straße 275, Köln 50937 Kirche St.Karl</p></li>
+            </ul>
+        </div>
+    
+        <div class="contacts__phone">
+            <h2 class="contacts__title">Телефон</h2>
+            <ul class="contacts__list">
+                <li><p class="contacts__item">+49 160 239-28-10</p></li>
+                <li><p class="contacts__item">+49 163 266-98-39</p></li>
+            </ul>
+        </div>
+    
+        <div class="contacts__email">
+            <h2 class="contacts__title">Електронна пошта</h2>
+            <ul class="contacts__list">
+                <li><p class="contacts__item">haievskyi.ser.church@gmail.com</p></li>
+            </ul>
+        </div>
+    </div>
+{%endblock main_content%}

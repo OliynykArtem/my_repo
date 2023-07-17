@@ -1,0 +1,33 @@
+.photogallery-main-title{
+    height: 50px;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    background-color: #11abff;
+    border-radius: 5px;
+    font-family: 'Ariel', sans-serif;
+    font-size: 24px;
+}
+
+.photogallery__list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    width: 770px;
+}
+
+.photogallery__item{
+    padding: 3px;
+    margin: 0 5px 15px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.photogallery__image img{
+    width: 360px; 
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 7px 12px 0px rgba(0, 0, 0, 0.3);
+}

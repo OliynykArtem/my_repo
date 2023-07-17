@@ -1,0 +1,318 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  *,
+  *:before,
+  *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  :focus,
+  :active {
+    outline: none;
+  }
+  a:focus,
+  a:active {
+    outline: none;
+  }
+  
+  nav,
+  footer,
+  header,
+  aside {
+    display: block;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    font: inherit;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  input,
+  button,
+  textarea {
+    font-family: inherit;
+  }
+  
+  input::-ms-clear {
+    display: none;
+  }
+  button {
+    cursor: pointer;
+  }
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  img {
+    vertical-align: top;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: 400;
+  }
+  
+  nav,
+  footer,
+  header,
+  aside {
+    display: block;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/background-site.png');
+    background-repeat: repeat;
+  }
+  
+  
+  header {
+    margin: 20px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .logo {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .logo p{
+    margin: 4px 0;
+    font-family: 'Lora', serif;
+    color: #11abff;
+    text-shadow: 0 0 0.7px #11abff;
+    text-align: center;
+  }
+  
+  .logo__organization-name,
+  .footer__organization-name {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  
+  .logo__site-name,
+  .footer__site-name {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    word-spacing: 6px;
+  }
+  
+  .menu__wrap {
+    position: relative;
+    width: 1150px;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    background-color: #11abff;
+    border-radius: 5px;
+  }
+  
+  .menu__item a {
+    display: block;
+    margin: 10px 20px;
+    padding: 10px 17px;
+    background-color: #d9e7fb;
+    border-radius: 20px;
+  }
+
+  .menu__item a:active {
+    transition: 0.1s;
+    opacity: 0.8;
+  }
+
+  .menu__item a span {
+    color: #1a1a1a;
+  }
+
+
+
+  main {
+    margin: 50px;
+    display: flex;
+  }
+
+  .main-conteiner {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+  }
+
+
+  .empty-block{
+    width: 770px;
+  }
+
+  /* .side-panel {
+    width: 360px;
+  } */
+
+  .sidebar-module{
+    width: 360px;
+  }  
+
+  .sidebar-module__title{
+      height: 50px;
+      padding: 10px 15px;
+      color: #fff;
+      text-align: center;
+      background-color: #11abff;
+      border-radius: 5px 5px 0 0;
+      font-family: 'Ariel', sans-serif;
+      font-size: 24px;
+    }
+  
+    .sidebar-module__content{
+    padding: 10px 15px;
+    background-color: #d9e7fb;
+    border: solid 1px #11abff;
+    border-radius: 0 0 5px 5px;
+    }
+  
+    .calendar {
+    width: 100%;
+      border-collapse: separate;
+      border-spacing: 3px;
+  }
+  
+  .calendar td{
+    text-align: center;
+  }
+  
+  .calendar__day-number{
+    padding: 7px 0;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .calendar__day-number a{
+    color: #1a1a1a;
+  }
+  
+  .calendar__day-number_empty{
+    background-color: #d9e7fb;
+  }
+
+
+  .day-info{
+    margin: 25px 10px 0 10px;
+  }
+
+  .day-info__title{
+    margin: 20px 0 10px 0;
+    padding: 10px 15px;
+    height: 46px;
+    color: #fff;
+    text-align: center;
+    background-color: #11abff;
+    border-radius: 5px;
+    font-family: 'Ariel', sans-serif;
+    font-size: 20px;
+  }
+
+  .info-about-saints p{
+    padding: 0 5px;
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 4px;
+    text-align: center;
+  }
+
+  .day-parable p{
+    padding: 0 5px 15px 5px;
+    color: #1a1a1a;
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  footer {
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 300px;
+    width: 100%;
+    background-color: #0C75AD;
+  }
+
+  .footer-title p{
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+    color: #F5F4EE;
+    text-align: center;
+  }
+
+  .footer-menu-wrap{
+    position: relative;
+    bottom: 15px;
+  }
+
+  .footer-menu{
+    display: flex;
+    max-width: 1100px;
+    justify-content: space-around;
+  }
+
+  .footer-menu__item{
+    margin: 0 5px;
+  }
+
+  .footer-menu__item a span{
+    color: #F5F4EE;
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .main-conteiner {
+      flex-direction: column;
+      align-items: center;
+    }
+    .side-panel {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-module{
+      width: 770px;
+    }
+    
+  }
