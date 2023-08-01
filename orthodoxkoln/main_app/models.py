@@ -10,7 +10,7 @@ class Publication(models.Model):
 
     class Meta:
         verbose_name = "Публікація"
-        verbose_name_plural = "Публікації"
+        verbose_name_plural = "1. Публікації"
 
     def __str__(self):
         return self.title
@@ -22,7 +22,7 @@ class PublicationImage(models.Model):
 
     class Meta:
         verbose_name = "Фото публікації"
-        verbose_name_plural = "Фото публікацій"
+        verbose_name_plural = "2. Фото публікацій"
 
 
 class PublicationVideo(models.Model):
@@ -31,7 +31,7 @@ class PublicationVideo(models.Model):
     
     class Meta:
         verbose_name = "Відео публікації"
-        verbose_name_plural = "Відео публікацій"
+        verbose_name_plural = "3. Відео публікацій"
 
 
 class Clergyman(models.Model):
@@ -46,7 +46,7 @@ class Clergyman(models.Model):
 
     class Meta:
         verbose_name = "Духовенство"
-        verbose_name_plural = "Духовенство"
+        verbose_name_plural = "4. Духовенство"
 
     def __str__(self):
         return self.name
@@ -61,7 +61,7 @@ class Parish(models.Model):
 
     class Meta:
         verbose_name = "Парафія"
-        verbose_name_plural = "Парафії"
+        verbose_name_plural = "5. Парафії"
 
     def __str__(self):
         return self.name
@@ -72,7 +72,7 @@ class ParishImage(models.Model):
     
     class Meta:
         verbose_name = "Фото парафії"
-        verbose_name_plural = "Фото парафій"
+        verbose_name_plural = "6. Фото парафій"
 
 
 class Calendar(models.Model):
@@ -82,7 +82,7 @@ class Calendar(models.Model):
 
     class Meta:
         verbose_name = "Календарний день"
-        verbose_name_plural = "Календарні дні"
+        verbose_name_plural = "8. Календарні дні"
 
 
 class Photogallery(models.Model):
@@ -90,7 +90,7 @@ class Photogallery(models.Model):
 
     class Meta:
         verbose_name = "Фото"
-        verbose_name_plural = "Фотогалерея"
+        verbose_name_plural = "7. Фотогалерея"
 
 
 class Bishop(models.Model):
