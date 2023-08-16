@@ -33,9 +33,10 @@ logger.addHandler(console_handler)
 #     return render(request,'main/base.html', {'all_calendar_day': all_calendar_day})
 
 
-all_publication = Publication.objects.all()
+all_publication = Publication.objects.all().order_by('-id')
 all_calendar_day = Calendar.objects.all()
 
+logger.debug(all_publication)
 
 def main(request):
     paginator = Paginator(all_publication, 5)
