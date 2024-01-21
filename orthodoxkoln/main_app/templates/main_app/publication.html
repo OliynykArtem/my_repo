@@ -19,7 +19,7 @@
         {% endif %}
         {% if publication_from_db.text %}
         <div class="publication__text">
-            <p>{{publication_from_db.text}}</p>
+            <p>{{publication_from_db.text |urlizetrunc:25}}</p>
         </div>
         {% endif %}
         {% if publication_images_from_db %}
